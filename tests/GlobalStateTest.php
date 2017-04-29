@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace WyriHaximus\React\Tests\Inspector\F42;
+
 use PHPUnit\Framework\TestCase;
 use WyriHaximus\React\Inspector\F42\GlobalState;
 
