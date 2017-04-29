@@ -1,6 +1,7 @@
 {
     "name": "wyrihaximus/react-event-loop-inspector-f42",
     "license": "MIT",
+    "description": "React Stream throughput inspector",
     "authors": [
         {
             "name": "Cees-Jan Kiewiet",
