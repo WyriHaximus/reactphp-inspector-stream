@@ -26,8 +26,6 @@ matrix:
       env: dependencies=highest
     - php: nightly
       env: dependencies=highest
-    - php: 7.0
-      env: benchmark=true
 
 ## Install or update dependencies
 install:
