@@ -32,6 +32,9 @@
         "wyrihaximus/react-event-loop-inspector-f42-bunny": "Bunny bindings"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.0"
+        }
     }
 }
