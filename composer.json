@@ -36,5 +36,19 @@
         "platform": {
             "php": "7.2"
         }
+    },
+    "extra": {
+        "react-inspector": {
+            "metrics": [
+                "io.read",
+                "io.write"
+            ],
+            "reset": {
+                "io": [
+                    "io.read",
+                    "io.write"
+                ]
+            }
+        }
     }
 }
