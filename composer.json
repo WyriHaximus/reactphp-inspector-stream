@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": "^7.2",
         "react/event-loop": "^1.0 || ^0.5 || ^0.4.3",
         "react/stream": "^1.0 || ^0.7 || ^0.6",
         "wyrihaximus/react-inspector": "dev-master"
@@ -34,7 +34,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "7.0"
+            "php": "7.2"
         }
     }
 }
