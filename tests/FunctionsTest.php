@@ -15,10 +15,10 @@ final class FunctionsTest extends TestCase
         fwrite($handle, 'abc', 3);
         self::assertSame([], GlobalState::get());
         Stream\fread($handle, 3);
-        self::assertSame(['io.read' => 0], GlobalState::get());
+        self::assertSame(['eventloop.io.read' => 0.0], GlobalState::get());
         rewind($handle);
         Stream\fread($handle, 3);
-        self::assertSame(['io.read' => 3], GlobalState::get());
+        self::assertSame(['eventloop.io.read' => 3.0], GlobalState::get());
         fclose($handle);
     }
 
@@ -29,10 +29,10 @@ final class FunctionsTest extends TestCase
         fwrite($handle, 'abc', 3);
         self::assertSame([], GlobalState::get());
         Stream\stream_get_contents($handle, 3);
-        self::assertSame(['io.read' => 0], GlobalState::get());
+        self::assertSame(['eventloop.io.read' => 0.0], GlobalState::get());
         rewind($handle);
         Stream\stream_get_contents($handle, 3);
-        self::assertSame(['io.read' => 3], GlobalState::get());
+        self::assertSame(['eventloop.io.read' => 3.0], GlobalState::get());
         fclose($handle);
     }
 
@@ -42,7 +42,7 @@ final class FunctionsTest extends TestCase
         $handle = fopen('php://memory', 'a+');
         self::assertSame([], GlobalState::get());
         Stream\fwrite($handle, 'abc', 3);
-        self::assertSame(['io.write' => 3], GlobalState::get());
+        self::assertSame(['eventloop.io.write' => 3.0], GlobalState::get());
         fclose($handle);
     }
 }

@@ -40,13 +40,13 @@
     "extra": {
         "react-inspector": {
             "metrics": [
-                "io.read",
-                "io.write"
+                "eventloop.io.read",
+                "eventloop.io.write"
             ],
             "reset": {
                 "io": [
-                    "io.read",
-                    "io.write"
+                    "eventloop.io.read",
+                    "eventloop.io.write"
                 ]
             }
         }
