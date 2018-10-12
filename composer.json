@@ -12,6 +12,7 @@
         "php": "^7.2",
         "react/event-loop": "^1.0 || ^0.5 || ^0.4.3",
         "react/stream": "^1.0 || ^0.7 || ^0.6",
+        "roave/better-reflection": "^3.1",
         "wyrihaximus/react-inspector": "dev-master"
     },
     "require-dev": {
@@ -21,11 +22,17 @@
         "squizlabs/php_codesniffer": "^2.6"
     },
     "autoload": {
-        "files": ["src/include.php"]
+        "psr-4": {
+            "WyriHaximus\\React\\Inspector\\Stream\\": "src/"
+        },
+        "files": [
+            "src/bootstrap.php",
+            "src/include.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "WyriHaximus\\React\\Tests\\Inspector\\Stream\\": "src/"
+            "WyriHaximus\\React\\Tests\\Inspector\\Stream\\": "tests/"
         }
     },
     "suggest": {
