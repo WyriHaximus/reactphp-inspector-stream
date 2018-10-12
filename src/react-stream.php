@@ -11,9 +11,9 @@ function fread($handle, $length)
     return $data;
 }
 
-function fwrite($handle, $data)
+function fwrite($handle, $data, $length = null)
 {
-    $writtenLength = \fwrite($handle, $data);
+    $writtenLength = \fwrite($handle, $data, $length);
     GlobalState::incr('eventloop.io.write', (float)$writtenLength);
     return $writtenLength;
 }
