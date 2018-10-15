@@ -51,7 +51,7 @@ final class Monky
         }
 
         if ($stmt instanceof Node\Expr\FuncCall && $stmt->name->toString() === $functionName) {
-            $stmt->name = new Node\Name('React\Stream\\' . $stmt->name->toString());
+            $stmt->name = new Node\Name('\React\Stream\\' . $stmt->name->toString());
         }
 
         return $stmt;
