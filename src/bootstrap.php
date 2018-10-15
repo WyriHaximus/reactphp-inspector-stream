@@ -14,18 +14,21 @@ use WyriHaximus\React\Inspector\Stream\Monky;
     // @codeCoverageIgnoreStart
     if (!class_exists(WritableResourceStream::class, false)) {
         $loader->addClass(Monky::patch(WritableResourceStream::class));
+        class_exists(WritableResourceStream::class);
     }
     // @codeCoverageIgnoreEnd
 
     // @codeCoverageIgnoreStart
     if (!class_exists(ReadableResourceStream::class, false)) {
         $loader->addClass(Monky::patch(ReadableResourceStream::class));
+        class_exists(ReadableResourceStream::class);
     }
     // @codeCoverageIgnoreEnd
 
     // @codeCoverageIgnoreStart
     if (!class_exists(DuplexResourceStream::class, false)) {
         $loader->addClass(Monky::patch(DuplexResourceStream::class));
+        class_exists(DuplexResourceStream::class);
     }
     // @codeCoverageIgnoreEnd
 })();
