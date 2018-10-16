@@ -2,16 +2,17 @@
 
 namespace WyriHaximus\React\Tests\Inspector\Stream;
 
-use PhpParser\PrettyPrinter\Standard;
 use PHPUnit\Framework\TestCase;
-use React\Stream\WritableResourceStream;
+use Roave\BetterReflection\Util\Autoload\ClassPrinter\PhpParserPrinter;
 use WyriHaximus\React\Inspector\Stream\Monky;
 
 final class MonkeyTest extends TestCase
 {
     public function testRerouting(): void
     {
-        $code = (new Standard())->prettyPrint(Monky::patch(WritableResourceStream::class)->getAst()->stmts);
-        self::assertNotFalse(strpos($code, 'React\Stream\fwrite'));
+        $code = (new PhpParserPrinter())(Monky::patch(MonkeyPatchTestTarget::class));
+        self::assertNotFalse(strpos($code, '\React\Stream\fwrite'));
+        self::assertNotFalse(strpos($code, '\React\Stream\fread'));
+        self::assertNotFalse(strpos($code, '\React\Stream\stream_get_contents'));
     }
 }
