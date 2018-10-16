@@ -7,7 +7,7 @@ use Roave\BetterReflection\BetterReflection;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 use Roave\BetterReflection\Reflection\ReflectionMethod;
 
-final class Monky
+final class Monkey
 {
     public static function patch(string $class): ReflectionClass
     {
