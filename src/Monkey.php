@@ -17,6 +17,7 @@ final class Monkey
             self::reroute($method, 'fwrite');
             self::reroute($method, 'stream_get_contents');
         }
+
         return $classReflection;
     }
 
