@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a81319a37f96ad2f8dbb56288323dedd",
+    "content-hash": "95bfcec76c75343bd859187587183b48",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -828,6 +828,45 @@
             ],
             "description": "Functions around joshdifabio/composed and igorw/get-in to gather configuration from composer.json",
             "time": "2018-06-19T20:43:13+00:00"
+        },
+        {
+            "name": "wyrihaximus/iterator-or-array-to-array",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-iterator-or-array-to-array.git",
+                "reference": "c7e47e00de72d1ea172a14ff3dd9a1558fffc189"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-iterator-or-array-to-array/zipball/c7e47e00de72d1ea172a14ff3dd9a1558fffc189",
+                "reference": "c7e47e00de72d1ea172a14ff3dd9a1558fffc189",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Like iterator_to_array but doesn't error when handed an array",
+            "time": "2018-10-20T16:36:27+00:00"
         },
         {
             "name": "wyrihaximus/react-inspector",
@@ -4201,6 +4240,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "wyrihaximus/iterator-or-array-to-array": 20,
         "wyrihaximus/react-inspector": 20
     },
     "prefer-stable": false,

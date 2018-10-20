@@ -6,6 +6,7 @@ use PhpParser\Node;
 use Roave\BetterReflection\BetterReflection;
 use Roave\BetterReflection\Reflection\ReflectionClass;
 use Roave\BetterReflection\Reflection\ReflectionMethod;
+use function WyriHaximus\iteratorOrArrayToArray;
 
 final class Monkey
 {
@@ -27,7 +28,7 @@ final class Monkey
             return;
         }
 
-        $method->setBodyFromAst(iterator_to_array(self::iterateAst($method->getBodyAst(), $functionName)));
+        $method->setBodyFromAst(iteratorOrArrayToArray(self::iterateAst($method->getBodyAst(), $functionName)));
     }
 
     private static function iterateAst(iterable $ast, string $functionName): iterable
@@ -40,7 +41,7 @@ final class Monkey
     private static function checkStmt(Node $stmt, string $functionName): Node
     {
         if (isset($stmt->stmts)) {
-            $stmt->stmts = iterator_to_array(self::iterateAst($stmt->stmts, $functionName));
+            $stmt->stmts = iteratorOrArrayToArray(self::iterateAst($stmt->stmts, $functionName));
         }
 
         if (isset($stmt->expr)) {
@@ -52,7 +53,7 @@ final class Monkey
         }
 
         if ($stmt instanceof Node\Expr\FuncCall && $stmt->name->toString() === $functionName) {
-            $stmt->name = new Node\Name('\React\Stream\\' . $stmt->name->toString());
+            $stmt->name = new Node  \Name('\React\Stream\\' . $stmt->name->toString());
         }
 
         return $stmt;
